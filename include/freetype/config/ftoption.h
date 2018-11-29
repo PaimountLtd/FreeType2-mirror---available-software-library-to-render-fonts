@@ -170,35 +170,36 @@ FT_BEGIN_HEADER
    */
 #define FT_CONFIG_OPTION_INLINE_MULFIX
 
+  /*************************************************************************/
+  /*                                                                       */
+  /* LZW-compressed file support.                                          */
+  /*                                                                       */
+  /*   FreeType now handles font files that have been compressed with the  */
+  /*   `compress' program.  This is mostly used to parse many of the PCF   */
+  /*   files that come with various X11 distributions.  The implementation */
+  /*   uses NetBSD's `zopen' to partially uncompress the file on the fly   */
+  /*   (see src/lzw/ftgzip.c).                                             */
+  /*                                                                       */
+  /*   Define this macro if you want to enable this `feature'.             */
+  /*                                                                       */
+// #define FT_CONFIG_OPTION_USE_LZW
 
-  /**************************************************************************
-   *
-   * LZW-compressed file support.
-   *
-   *   FreeType now handles font files that have been compressed with the
-   *   'compress' program.  This is mostly used to parse many of the PCF
-   *   files that come with various X11 distributions.  The implementation
-   *   uses NetBSD's 'zopen' to partially uncompress the file on the fly (see
-   *   src/lzw/ftgzip.c).
-   *
-   *   Define this macro if you want to enable this 'feature'.
-   */
-#define FT_CONFIG_OPTION_USE_LZW
+
+  /*************************************************************************/
+  /*                                                                       */
+  /* Gzip-compressed file support.                                         */
+  /*                                                                       */
+  /*   FreeType now handles font files that have been compressed with the  */
+  /*   `gzip' program.  This is mostly used to parse many of the PCF files */
+  /*   that come with XFree86.  The implementation uses `zlib' to          */
+  /*   partially uncompress the file on the fly (see src/gzip/ftgzip.c).   */
+  /*                                                                       */
+  /*   Define this macro if you want to enable this `feature'.  See also   */
+  /*   the macro FT_CONFIG_OPTION_SYSTEM_ZLIB below.                       */
+  /*                                                                       */
+// #define FT_CONFIG_OPTION_USE_ZLIB
 
 
-  /**************************************************************************
-   *
-   * Gzip-compressed file support.
-   *
-   *   FreeType now handles font files that have been compressed with the
-   *   'gzip' program.  This is mostly used to parse many of the PCF files
-   *   that come with XFree86.  The implementation uses 'zlib' to partially
-   *   uncompress the file on the fly (see src/gzip/ftgzip.c).
-   *
-   *   Define this macro if you want to enable this 'feature'.  See also the
-   *   macro FT_CONFIG_OPTION_SYSTEM_ZLIB below.
-   */
-#define FT_CONFIG_OPTION_USE_ZLIB
 
 
   /**************************************************************************
@@ -334,17 +335,18 @@ FT_BEGIN_HEADER
 #define FT_CONFIG_OPTION_ADOBE_GLYPH_LIST
 
 
-  /**************************************************************************
-   *
-   * Support for Mac fonts
-   *
-   *   Define this macro if you want support for outline fonts in Mac format
-   *   (mac dfont, mac resource, macbinary containing a mac resource) on
-   *   non-Mac platforms.
-   *
-   *   Note that the 'FOND' resource isn't checked.
-   */
-#define FT_CONFIG_OPTION_MAC_FONTS
+  /*************************************************************************/
+  /*                                                                       */
+  /* Support for Mac fonts                                                 */
+  /*                                                                       */
+  /*   Define this macro if you want support for outline fonts in Mac      */
+  /*   format (mac dfont, mac resource, macbinary containing a mac         */
+  /*   resource) on non-Mac platforms.                                     */
+  /*                                                                       */
+  /*   Note that the `FOND' resource isn't checked.                        */
+  /*                                                                       */
+// #define FT_CONFIG_OPTION_MAC_FONTS
+
 
 
   /**************************************************************************
